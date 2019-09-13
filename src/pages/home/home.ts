@@ -40,14 +40,17 @@ export class HomePage {
       });
   }
  
-  startListening() {
-    /*let options = {
-      language: 'en-US'
-    }*/
-    this.speechRecognition.startListening().subscribe(matches => {
-      this.matches = matches;
-      this.cd.detectChanges();
-    });
+  startListening() 
+  {
+    this.speechRecognition
+        .startListening()
+        .subscribe(matches => 
+        {
+          this.matches = matches;
+          console.log(this.matches);
+          this.cd.detectChanges();
+        });
+
     this.isRecording = true;
   }
 

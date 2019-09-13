@@ -1,18 +1,15 @@
 <ion-header>
-    <ion-navbar [color]="isRecording ? 'danger' : 'primary'">
-      <ion-title>
-        Listen to Me
-      </ion-title>
+    <ion-navbar>
+      <img src="assets/imgs/marca_MV.svg" width="30%" alt="logo">
+      <img src="assets/imgs/marca_MV.svg" width="30%" alt="logo">
+      <img src="assets/imgs/marca_MV.svg" width="30%" alt="logo">
     </ion-navbar>
   </ion-header>
   
   <ion-content padding>
-    <button ion-button full (click)="getPermission()">Get Permission</button>
-    <button ion-button full (click)="startListening()">Start Listening</button>
-    <button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
-  
+    
     <ion-card>
-      <ion-card-header>This is what I understood...</ion-card-header>
+      <ion-card-header style="text-align: center">Resultados</ion-card-header>
       <ion-card-content>
         <ion-list>
           <ion-item *ngFor="let match of matches">
@@ -21,4 +18,10 @@
         </ion-list>
       </ion-card-content>
     </ion-card>
+
+    <ion-fab bottom center class="speech-button">
+      <button ion-fab (click)="startListening()">
+        <ion-icon name="mic"></ion-icon>
+      </button>
+    </ion-fab>
   </ion-content>
